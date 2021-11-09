@@ -51,6 +51,18 @@ public class ReservationDaoImpl implements ReservationDao {
 	}
 
 	@Override
+	public List<Reservation> getReservationsAfterDate(int customerId, String date) {
+		Session currentSession = entityManager.unwrap(Session.class);
+		
+		Query<Reservation> theQuery = currentSession.createQuery("from Reservation where date>=:reservationDate and customer_id=:id" 
+										,  Reservation.class);
+		theQuery.setParameter("reservationDate", date);
+		theQuery.setParameter("id", customerId);
+		List<Reservation> reservations = theQuery.getResultList();
+		return reservations;
+	}
+
+	@Override
 	public void save(Reservation theReservation) {
 		Session currentSession = entityManager.unwrap(Session.class);
 		
@@ -67,6 +79,7 @@ public class ReservationDaoImpl implements ReservationDao {
 		theQuery.executeUpdate();
 		
 	}
+
 
 
 	

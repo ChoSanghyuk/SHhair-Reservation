@@ -12,13 +12,12 @@ Reservation theReservation = (Reservation) request.getAttribute("theReservation"
 String date;
 if(request.getParameter("date") == null){
 	date = theReservation.getDate();
-	date = date.substring(0,4)+date.substring(5,7)+date.substring(8);
 } else {
 	date = request.getParameter("date");
 }
 String type = request.getParameter("type") == null ? theReservation.getType() : request.getParameter("type") ;
 int y = Integer.parseInt(date.substring(0,4));
-int m = Integer.parseInt(date.substring(4,6));
+int m = Integer.parseInt(date.substring(5,7));
 
 cal.set(y,m-1,1);
 int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK); // 일:0 ~ 토:7
@@ -75,8 +74,10 @@ int lastDay = cal.getActualMaximum(Calendar.DATE);
 				count++;
 				String s = "" ;
 				s += y;
+				s += "-";
 				if(m < 10) s += 0;
 				s += m;
+				s += "-";
 				if(d < 10) s += 0;
 				s += d;
 				if(s.equals(date)){

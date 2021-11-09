@@ -16,7 +16,7 @@
         </li>
           <li class="nav-item"><a class="nav-link" href="/reservation">예약하기</a></li>
           <li class="nav-item"><a class="nav-link" href="/reservation/confirm">예약확인</a></li>
-          <li class="nav-item"><a class="nav-link" href="">로그아웃</a></li>
+          <li class="nav-item"><a class="nav-link" href="/doLogout">로그아웃</a></li>
       </ul>
     </div>
   </div>

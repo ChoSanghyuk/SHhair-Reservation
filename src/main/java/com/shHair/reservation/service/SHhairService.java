@@ -36,6 +36,8 @@ public interface SHhairService {
 	
 	public List<Reservation> getReservationsByDate(String date);
 	
+	public List<Reservation> getReservationsAtferDate(int customerId, String date);
+	
 	public void saveReservation(Reservation theReservation);
 	
 	public void deleteReservation(int theId);

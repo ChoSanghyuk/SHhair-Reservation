@@ -66,8 +66,10 @@ int lastDay = cal.getActualMaximum(Calendar.DATE);
 				count++;
 				String s = "" ;
 				s += y;
+				s += "-";
 				if(m+1 < 10) s += 0;
 				s += m+1;
+				s += "-";
 				if(d < 10) s += 0;
 				s += d;
 				if(s.equals(request.getParameter("date"))){

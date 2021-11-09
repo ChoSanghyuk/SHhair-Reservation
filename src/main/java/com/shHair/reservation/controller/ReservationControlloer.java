@@ -85,10 +85,10 @@ public class ReservationControlloer {
 	public String confirmReservation(HttpServletRequest request, Model model) {
 		int theCustomerId = getLoggedInCustomerId();
 		Customer theCustomer = mySHhairService.getCustomerById(theCustomerId);
-		List<Reservation> reservations = theCustomer.getReservations();
-		Reservation theReservation =  reservations.get(reservations.size()-1);
 		model.addAttribute("customerName", theCustomer.getName());
-		model.addAttribute("theReservation", theReservation);
+		model.addAttribute("theReservation", theCustomer.getReservations().get(0));
+		
+		model.addAttribute("theReservatoins", mySHhairService.getReservationsAtferDate(theCustomer.getId(), "2021-09-28" ));
 				
 		return "reservation/reservation-check";
 	}

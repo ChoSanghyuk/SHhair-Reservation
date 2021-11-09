@@ -59,7 +59,7 @@
 		<div class = "row fs-5 my-1">
 			<div class = "col-3 align-middle" style="margin : auto">예약내역</div>
 			<div class = "col-9 overflow-auto" style="height : 200px;">
-				<c:forEach var = "theReservation" items="${theCustomer.getReservations()}">
+				<c:forEach var = "theReservation" items="${theCustomer.getReservations()}" >
 					<p><c:out value="${theReservation}" /> </p>
 				</c:forEach>
 			</div>

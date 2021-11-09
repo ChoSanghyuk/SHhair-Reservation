@@ -105,6 +105,12 @@ public class SHhairServiceImpl implements SHhairService {
 
 	@Override
 	@Transactional
+	public List<Reservation> getReservationsAtferDate(int customerId, String date) {
+		return reservatonDao.getReservationsAfterDate(customerId, date);
+	}
+
+	@Override
+	@Transactional
 	public void saveReservation(Reservation theReservation) {
 		reservatonDao.save(theReservation);
 	}
@@ -172,5 +178,6 @@ public class SHhairServiceImpl implements SHhairService {
 
 		return availabletimes;
 	}
+
 
 }

@@ -10,6 +10,8 @@ public interface ReservationDao {
 	
 	public Reservation findById(int theId);
 	
+	public List<Reservation> getReservationsAfterDate(int customerId, String date);
+	
 	public List<Reservation> findByDate(String date);
 	
 	public void save(Reservation theReservation);

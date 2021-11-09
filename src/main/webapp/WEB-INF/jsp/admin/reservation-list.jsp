@@ -18,10 +18,10 @@
 			<a class="col-12 btn btn-outline-secondary btn-lg">예약 생성</a>
 		</div>
 		<div class="row my-1">
-			<div class="offset-9 col-3 text-end">			
+			<div class="offset-8 col-4 text-end">			
 			<form action="/admin/reservation" method="GET">
 				<% String today = request.getParameter("date") == null ? LocalDate.now().toString() : request.getParameter("date"); %>
-        		<input name="date" id="date" placeholder="yyyy-mm-dd" type = "text" size="15" value="<%=today%>">
+        		<input name="date" id="date" placeholder="yyyy-mm-dd" type = "date" size="15" value="<%=today%>">
         		<input type = "submit" value="날짜 검색" >
 			</form>
 			</div>

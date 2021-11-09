@@ -7,6 +7,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -33,9 +34,12 @@ public class MyUserDetailsService implements UserDetailsService{
 	}
 	
 	private Collection<? extends GrantedAuthority> getAuthorities(LoginInfo loginInfo) {
-		
-		String[] userRoles = new String[] {loginInfo.getRoles()};
-		Collection<GrantedAuthority> authorities = AuthorityUtils.createAuthorityList(userRoles);
+		System.out.println("hi1");
+//		String[] userRoles = new String[] {loginInfo.getRoles()};
+		Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
+//				AuthorityUtils.createAuthorityList(userRoles);
+		authorities.add(new SimpleGrantedAuthority(loginInfo.getRoles()));
+//		System.out.println(authorities);
 		return authorities;
 	}
 	

@@ -16,7 +16,7 @@
         </li>
           <li class="nav-item"><a class="nav-link" href="/admin/reservation">예약관리</a></li>
           <li class="nav-item"><a class="nav-link" href="/admin/customer">고객관리</a></li>
-          <li class="nav-item"><a class="nav-link" href="">로그아웃</a></li>
+          <li class="nav-item"><a class="nav-link" href="/doLogout">로그아웃</a></li>
       </ul>
     </div>
   </div>

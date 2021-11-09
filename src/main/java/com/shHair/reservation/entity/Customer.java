@@ -1,6 +1,8 @@
 package com.shHair.reservation.entity;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -136,6 +138,13 @@ public class Customer {
 //	}
 
 	public List<Reservation> getReservations() {
+		Collections.sort(reservations, new Comparator<Reservation>() {
+		    @Override
+		    public int compare(Reservation a1, Reservation a2) {
+
+		        return -a1.getDate().compareTo(a2.getDate()) ; 
+		    }
+		});
 		return reservations;
 	}
 
